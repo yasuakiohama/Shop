@@ -10,9 +10,8 @@ GameObject:
   - 224: {fileID: 22422290}
   - 114: {fileID: 11495488}
   - 114: {fileID: 11405018}
-  - 114: {fileID: 11426746}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ShopContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,8 +113,9 @@ GameObject:
   - 223: {fileID: 22355682}
   - 114: {fileID: 11446430}
   - 114: {fileID: 11410792}
+  - 114: {fileID: 11420704}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ShopCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,18 +214,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!114 &11426746
+--- !u!114 &11420704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104992}
+  m_GameObject: {fileID: 160750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e57baa59a52e485f90af3305d3c3370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   num: 10
+  yesNoCanvas: {fileID: 0}
+  shopContent: {fileID: 22422290}
 --- !u!114 &11435014
 MonoBehaviour:
   m_ObjectHideFlags: 1
