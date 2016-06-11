@@ -16,9 +16,17 @@ public class CreateShopItem : MonoBehaviour
             item.name = "ItemButton";
             item.transform.SetParent (shopContent, false);
 
-            item.transform.FindChild ("Button").GetComponent<Button> ().onClick.AddListener (() => {
+            Button.ButtonClickedEvent buttonClickedEvent = item.transform.FindChild ("Button").GetComponent<Button> ().onClick;
+            buttonClickedEvent.AddListener (() => {
                 yesNoCanvas.SetActive (true);
             });
+
+            UnityEditor.Events.UnityEventTools.AddObjectPersistentListener<GameObject> (buttonClickedEvent, OnClick, gameObject);
         }
+    }
+
+    void OnClick(GameObject obj)
+    {
+        Debug.Log (obj.name);
     }
 }
