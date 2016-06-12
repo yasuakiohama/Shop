@@ -1,59 +1,73 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class CreateShopItem : MonoBehaviour
 {
-    public int[] itemIds;
-    public GameObject yesNoCanvas;
-    public Transform shopContent;
-    public Text itemText;
-    private Dictionary<int,ItemData> itemDictionary;
+    [SerializeField]
+    private int[] itemIds;
+    [SerializeField]
+    private GameObject yesNoCanvas;
+    [SerializeField]
+    private Transform shopContent;
+    [SerializeField]
+    private Text itemText;
 
-    void Start ()
+    public Action<int> Init()
     {
-        CreateItemKeyValue ();
+        Action<int> onChangeCoin = (coin) => { };
 
-        foreach (int itemId in itemIds) {
-            var item = Instantiate (Resources.Load ("Prefabs/ItemButton")) as GameObject;
-            item.name = "ItemButton";
-            item.transform.SetParent (shopContent, false);
-            item.transform.FindChild ("Image").GetComponent<Image> ().sprite = itemDictionary [itemId].sprite;
-            item.transform.FindChild ("Name").GetComponent<Text> ().text = itemDictionary [itemId].name;
-            item.transform.FindChild ("Prise").GetComponent<Text> ().text = itemDictionary [itemId].prise.ToString ();
+        foreach (int id in itemIds) {
+            var item = (Instantiate (Resources.Load ("Prefabs/ItemButton")) as GameObject).transform;
+            item.SetParent (shopContent, false);
+            item.GetComponent<ShowItemData> ().SetItemData (id);
 
-            Button.ButtonClickedEvent buttonClickedEvent = item.transform.FindChild ("Button").GetComponent<Button> ().onClick;
-            UnityEditor.Events.UnityEventTools.AddPersistentListener (buttonClickedEvent, OnClick);
+            Button button = item.FindChild ("Button").GetComponent<Button> ();
+            Button panel = item.GetComponent<Button> ();
 
-            Button.ButtonClickedEvent panelClickedEvent = item.transform.GetComponent<Button> ().onClick;
-            UnityEditor.Events.UnityEventTools.AddIntPersistentListener (panelClickedEvent, OnClick, itemId);
+            int key = id;
+
+            button.onClick.AddListener (() => {
+                OnClickSendYesNoWindow (key);
+            });
+
+            panel.onClick.AddListener (() => {
+                OnClickButton (key);
+            });
+
+            onChangeCoin += (coin) => {
+                bool canBuy = coin >= ItemMasterData.GetValue (key).prise;
+                button.interactable = canBuy;
+                panel.interactable = canBuy;
+            };
         }
 
-        if (itemDictionary.Count > 0 && itemIds.Length > 0) {
-            itemText.text = itemDictionary [itemIds [0]].text;
+        ItemTextInit ();
+
+        return onChangeCoin;
+    }
+
+    private void ItemTextInit()
+    {
+        if (ItemMasterData.GetLength () > 0 && itemIds.Length > 0) {
+            itemText.text = ItemMasterData.GetValue (itemIds [0]).text;
         } else {
             itemText.text = "品切れです";
         }
     }
 
-    void OnClick(int id)
+    private void OnClickButton(int id)
     {
-        itemText.text = itemDictionary [id].text;
+        itemText.text = ItemMasterData.GetValue (id).text;
     }
 
-    void OnClick()
+    private void OnClickSendYesNoWindow(int id)
     {
+        itemText.text = ItemMasterData.GetValue (id).text;
         yesNoCanvas.SetActive (true);
-    }
-
-    public void CreateItemKeyValue()
-    {
-        ItemMasterData itemMasterData = Resources.Load ("ItemMasterData") as ItemMasterData;
-        itemDictionary = new Dictionary<int, ItemData> ();
-        foreach (ItemData data in itemMasterData.data) {
-            itemDictionary.Add (data.id, data);
-        }
+        yesNoCanvas.GetComponent<ShowItemData> ().SetItemData (id);
     }
 }
