@@ -11,4 +11,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10fc8b42a8de47448906bce48d01e59, type: 3}
   m_Name: ItemMasterData
   m_EditorClassIdentifier: 
-  data: []
+  data:
+  - id: 10001
+    name: "\u30D1\u30F3"
+    prise: 100
+    text: "\u713C\u304D\u305F\u3066\u306E\u30D1\u30F3"
+    sprite: {fileID: 21300000, guid: c0966fb4efbcbba4a8bd4b4b04f36a2c, type: 3}
+  - id: 10002
+    name: "\u308A\u3093\u3054"
+    prise: 250
+    text: "\u7518\u3044\u308A\u3093\u3054"
+    sprite: {fileID: 21300000, guid: a7f5d7a5c6765cd459a05338b0177198, type: 3}
+  - id: 10003
+    name: "\u7DD1\u306E\u30CF\u30FC\u30D6"
+    prise: 30
+    text: "HP30\u56DE\u5FA9"
+    sprite: {fileID: 21300000, guid: 48c28027524ed6f438070d080589bf30, type: 3}
+  - id: 10004
+    name: "\u5B9D\u77F3"
+    prise: 5000
+    text: "\u30AD\u30E9\u30AD\u30E9\u8F1D\u3044\u3066\u308B"
+    sprite: {fileID: 21300000, guid: 4e1fa431fcd2e4a4aa20ef1430ec6bbe, type: 3}
+  - id: 10005
+    name: "\u30DD\u30C3\u30C8"
+    prise: 1000
+    text: "\u304A\u6E6F\u304C\u6CB8\u304B\u305B\u308B"
+    sprite: {fileID: 21300000, guid: e3202a65f7689c04caccc0e148930b9c, type: 3}
+  - id: 10006
+    name: "\u30DD\u30FC\u30B7\u30E7\u30F3"
+    prise: 800
+    text: "100\u56DE\u5FA9\u3059\u308B"
+    sprite: {fileID: 21300000, guid: da9079010aa739d44adb2bb1e6436a9b, type: 3}
+  - id: 10007
+    name: "\u5DFB\u7269"
+    prise: 900
+    text: "\u30C9\u30E9\u30B4\u30F3\u53EC\u559A\u3059\u308B"
+    sprite: {fileID: 21300000, guid: 29126e72572db454b9d34c70ed21671b, type: 3}
+  - id: 10008
+    name: "\u30BD\u30FC\u30C9"
+    prise: 3000
+    text: "\u666E\u901A\u306E\u30BD\u30FC\u30C9 ATK+30"
+    sprite: {fileID: 21300000, guid: 7dafd81925b7a394fa6d3515515b48b7, type: 3}
+  - id: 10009
+    name: "\u9752\u3044\u30CF\u30FC\u30D6"
+    prise: 290
+    text: "\u6BD2\u6D88\u3059"
+    sprite: {fileID: 21300000, guid: e54bbd00dbf65e64d90198c333ce0be3, type: 3}
+  - id: 10010
+    name: "\u30EC\u30E2\u30F3"
+    prise: 470
+    text: "\u9178\u3063\u3071\u3044\u30EC\u30E2\u30F3"
+    sprite: {fileID: 21300000, guid: 1ea3ca5671548d840ab5dedcc169302a, type: 3}
+  - id: 10011
+    name: "\u30AA\u30EC\u30F3\u30B8"
+    prise: 260
+    text: "\u307F\u305A\u307F\u305A\u3057\u3044\u30AA\u30EC\u30F3\u30B8"
+    sprite: {fileID: 21300000, guid: 7593d2dbe337d2448a5044fb61a38469, type: 3}
+  - id: 10012
+    name: "\u30B0\u30EC\u30FC\u30D7"
+    prise: 350
+    text: "\u76EE\u306B\u3044\u3044\u30B0\u30EC\u30FC\u30D7"
+    sprite: {fileID: 21300000, guid: 15ed6d18e363eee40a14c8c921a1510d, type: 3}
+  - id: 10013
+    name: "\u8D64\u3044\u30DD\u30FC\u30B7\u30E7\u30F3"
+    prise: 3000
+    text: "\u6295\u3052\u308B\u3068\u7206\u767A\u3059\u308B"
+    sprite: {fileID: 21300000, guid: da2fd2fe0130b2e45a50038aa7db4be2, type: 3}
+  - id: 10014
+    name: "\u8679\u8272\u306E\u5B9D\u77F3"
+    prise: 300000
+    text: "\u9AD8\u304F\u58F2\u308C\u308B"
+    sprite: {fileID: 21300000, guid: 844cabb9302017241a3bedcc3c608bfa, type: 3}
+  - id: 10015
+    name: "\u30A8\u30EA\u30AF\u30B5\u30FC"
+    prise: 30000
+    text: "HP\u5168\u56DE\u5FA9"
+    sprite: {fileID: 21300000, guid: e581dc519b076fd4eb7df15ee6b2d0ca, type: 3}

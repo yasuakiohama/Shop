@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 [CreateAssetMenu()]
@@ -14,6 +13,6 @@ public class ItemData
     public int id;
     public string name;
     public int prise;
-    public int text;
-    public Image image;
+    public string text;
+    public Sprite sprite;
 }
