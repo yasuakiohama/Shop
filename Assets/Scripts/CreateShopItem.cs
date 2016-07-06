@@ -66,7 +66,7 @@ public class CreateShopItem : MonoBehaviour
 
     private void OpenYesNoWindow(int id)
     {
-        itemText.text = ItemMasterData.GetValue (id).text;
+        ChangeItemText (id);
         yesNoCanvas.SetActive (true);
         yesNoCanvas.GetComponent<ShowItemData> ().SetItemData (id);
     }
