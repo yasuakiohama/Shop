@@ -31,11 +31,11 @@ public class CreateShopItem : MonoBehaviour
             int key = id;
 
             button.onClick.AddListener (() => {
-                OnClickSendYesNoWindow (key);
+                OpenYesNoWindow (key);
             });
 
             panel.onClick.AddListener (() => {
-                OnClickButton (key);
+                ChangeItemText (key);
             });
 
             onChangeCoin += (coin) => {
@@ -59,12 +59,12 @@ public class CreateShopItem : MonoBehaviour
         }
     }
 
-    private void OnClickButton(int id)
+    private void ChangeItemText(int id)
     {
         itemText.text = ItemMasterData.GetValue (id).text;
     }
 
-    private void OnClickSendYesNoWindow(int id)
+    private void OpenYesNoWindow(int id)
     {
         itemText.text = ItemMasterData.GetValue (id).text;
         yesNoCanvas.SetActive (true);
